@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_telegram_messages
+    description: "Cleaned and structured Telegram messages from raw data."
+    columns:
+      - name: message_id
+        tests:
+          - not_null
+          - unique
+      - name: message_date
+        tests:
+          - not_null
