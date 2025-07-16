@@ -1,0 +1,9 @@
+# .gitignore
+.env
+__pycache__/
+*.pyc
+*.log
+dbt_project/target/
+# Ignore only images and Telegram messages
+data/raw/images/
+data/raw/telegram_messages/

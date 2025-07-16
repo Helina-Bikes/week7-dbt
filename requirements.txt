@@ -1,0 +1,8 @@
+telethon
+psycopg2
+python-dotenv
+dbt-mysql
+fastapi
+uvicorn
+dagster
+yolov5  
