@@ -18,9 +18,8 @@ select
     m.message_id,
     m.message_text,
     d.date as message_date,
-    c.channel_name,
-    m.has_media_flag,
-    m.media_type
+    c.channel_name
+  
 
 from messages m
 left join channels c on c.channel_name = '{{ var("channel_name", "lobelia4cosmetics") }}'
