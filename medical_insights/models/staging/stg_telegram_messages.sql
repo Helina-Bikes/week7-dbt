@@ -1,14 +1,14 @@
-with raw as (
+WITH raw AS (
 
-    select * from {{ source('telegram_raw', 'raw_telegram_messages') }}
+    SELECT * FROM {{ source('telegram_raw', 'raw_telegram_messages') }}
 
 )
 
-select
-    id as message_id,
-    message as message_text,
-    STR_TO_DATE(date, '%Y-%m-%d %H:%i:%s') as message_date,
-    has_media as has_media_flag,
-    media_type
+SELECT
+    message_id,
+    message AS message_text,
+    STR_TO_DATE(message_date, '%Y-%m-%d %H:%i:%s') AS message_date,
+    channel_name,
+    channel_url
 
-from raw
+FROM raw
