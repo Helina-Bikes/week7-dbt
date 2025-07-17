@@ -41,7 +41,7 @@ def main():
                             ON DUPLICATE KEY UPDATE confidence_score = VALUES(confidence_score)
                         """, (message_id, class_name, confidence))
                     except Exception as e:
-                        print(f"❌ Failed to insert detection for message_id {message_id}: {e}")
+                        print(f"❌ unable to detect object {message_id}: {e}")
 
     conn.commit()
     cursor.close()
