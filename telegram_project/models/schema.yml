@@ -1,0 +1,7 @@
+sources:
+  - name: telegram_raw
+    database: karamedical # replace with your MySQL DB name
+    schema: karamedical
+    tables:
+      - name: raw_telegram_messages
+        description: "Raw scraped Telegram messages loaded from JSON files."
