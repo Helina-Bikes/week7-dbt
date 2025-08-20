@@ -10,5 +10,6 @@ SELECT
     STR_TO_DATE(message_date, '%Y-%m-%d %H:%i:%s') AS message_date,
     channel_name,
     channel_url
+    media_file_name 
 
 FROM raw
