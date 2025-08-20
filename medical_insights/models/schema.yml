@@ -2,8 +2,7 @@ version: 2
 
 sources:
   - name: telegram_raw
-    database: kara_warehouse    # replace with your MySQL DB name, e.g. kara_warehouse
-    schema: kara_warehouse            # keep your schema here
-    tables:
+    database: karamedical   # replace with your MySQL DB name, e.g. kara_warehouse
+    schema: karamedical
       - name: raw_telegram_messages
         description: "Raw scraped Telegram messages loaded from JSON files."

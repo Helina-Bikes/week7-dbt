@@ -7,7 +7,7 @@ def main():
         host="localhost",
         user="root",
         password="helina123bikes",
-        database="kara_warehouse"
+        database="karamedical"
     )
     cursor = conn.cursor()
 
