@@ -34,15 +34,9 @@ async def scrape_channel(channel_url):
     print(f"🔍 Scraping channel: {channel_name}")
 
     async for message in client.iter_messages(channel_url, limit=100):
-        msg_data = {
-            "id": message.id,
-            "date": str(message.date),
-            "message": message.message,
-            "has_media": bool(message.media),
-            "media_type": "photo" if isinstance(message.media, MessageMediaPhoto) else None,
-        }
-
+        
         # Save photo separately
+        media_file_name = None
         if isinstance(message.media, MessageMediaPhoto):
             img_dir = f"data/raw/images/{channel_name}"
             os.makedirs(img_dir, exist_ok=True)
@@ -50,6 +44,16 @@ async def scrape_channel(channel_url):
                 await message.download_media(file=img_dir)
             except Exception as e:
                 print(f"❌ Failed to download image: {e}")
+                
+        msg_data = {
+            "id": message.id,
+            "date": str(message.date),
+            "message": message.message,
+            "has_media": bool(message.media),
+            "media_type": "photo" if isinstance(message.media, MessageMediaPhoto) else None,
+            "media_file_name": media_file_name
+        }
+
 
         messages.append(msg_data)
 
